@@ -8,10 +8,10 @@ namespace Banka
 {
     class Banka
     {
-        public string jmeno_B;
-        public int pocet_U;
-        public string lokalita_B;
-        public Ucet[] Ucty;
+        public string jmeno_B { get; private set; }
+        public int pocet_U { get; private set; }
+        public string lokalita_B { get; private set; }
+        public Ucet[] Ucty { get; private set; }
 
         public Banka(string jmeno_b, string lokalita_b, int max_pocet_u)
         {
@@ -37,6 +37,19 @@ namespace Banka
             foreach(Ucet ucet in Ucty)
             {
                 ucet.Informace();
+            }
+        }
+
+        public void Priradit_Vlastnika(int ID_U, List<Vlastnik> vlastnici)
+        {
+            int.TryParse(Console.ReadLine(), out int vlastnik);
+
+            foreach (var ucet in Ucty)
+            {
+                if (ucet.ID_U == ID_U)
+                {
+                    Console.WriteLine($"Nový vlastník nastaven pro {ucet.jmeno_U}: {ucet.setVlastnik(vlastnici[vlastnik])}");
+                }
             }
         }
     }

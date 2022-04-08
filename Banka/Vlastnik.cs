@@ -8,10 +8,10 @@ namespace Banka
 {
     class Vlastnik
     {
-        public string jmeno_V;
-        public string prijmeni_V;
-        public int vek_V;
-        public string rodne_C;
+        public string jmeno_V { get; private set; }
+        public string prijmeni_V { get; private set; }
+        public int vek_V { get; private set; }
+        public string rodne_C { get; private set; }
         
 
         public Vlastnik(string jmeno_v, string prijmeni_v, int vek_v, string rodne_c)

@@ -5,3 +5,4 @@ E:\Programování\Banka\Banka\Banka\obj\Debug\Banka.csproj.AssemblyReference.cac
 E:\Programování\Banka\Banka\Banka\obj\Debug\Banka.csproj.CoreCompileInputs.cache
 E:\Programování\Banka\Banka\Banka\obj\Debug\Banka.exe
 E:\Programování\Banka\Banka\Banka\obj\Debug\Banka.pdb
+E:\Programování\Banka\Banka\Banka\obj\Debug\Banka.csproj.SuggestedBindingRedirects.cache

@@ -8,11 +8,11 @@ namespace Banka
 {
     class Ucet
     {
-        public string jmeno_U;
-        public bool stav_U;
-        public int zustatek_U;
-        public int ID_U;
-        public Vlastnik Vlastnik;
+        public string jmeno_U { get; private set; }
+        public bool stav_U { get; private set; }
+        public int zustatek_U { get; private set; }
+        public int ID_U { get; private set; }
+        public Vlastnik Vlastnik { get; private set; }
 
         public Ucet(string jmeno_u, bool stav_u, int zustatek_u, int id_u, Vlastnik vlastnik)
         {
@@ -23,9 +23,19 @@ namespace Banka
             Vlastnik = vlastnik;
         }
 
+        public string setVlastnik(Vlastnik vlastnik)
+        {
+            Vlastnik = vlastnik;
+            return $"{Vlastnik.jmeno_V} {Vlastnik.prijmeni_V}";
+        }
+
         public void Informace()
         {
-            Console.WriteLine($"ID: {ID_U}    Název: {jmeno_U}    Stav: {stav_U}    Zustatek: {zustatek_U}    Vlastník: {Vlastnik.jmeno_V} {Vlastnik.prijmeni_V}");
+            Console.WriteLine(
+                !(Vlastnik is null)
+                    ? $"ID: {ID_U}    Název: {jmeno_U}    Stav: {stav_U}    Zustatek: {zustatek_U}    Vlastník: {Vlastnik.jmeno_V} {Vlastnik.prijmeni_V}"
+                    : $"ID: {ID_U}    Název: {jmeno_U}    Stav: {stav_U}    Zustatek: {zustatek_U}    Vlastník: Nemá vlastníka"
+            );
         }
     }
 }
